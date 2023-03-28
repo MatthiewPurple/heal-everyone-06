@@ -3,7 +3,6 @@ using HarmonyLib;
 using Il2Cpp;
 using heal_everyone_06;
 using Il2Cppnewdata_H;
-using static Il2Cpp.AssetBundles;
 
 [assembly: MelonInfo(typeof(HealEveryone06), "Heal everyone (0.6 ver.)", "1.0.0", "Matthiew Purple")]
 [assembly: MelonGame("アトラス", "smt3hd")]
