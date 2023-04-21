@@ -19,11 +19,11 @@ public class HealEveryone06 : MelonMod
     {
         public static bool Prefix(ref int nskill, ref datUnitWork_t d)
         {
-            // If using Media, Mediarama, Mediarahan/Bead Chain, Great Chakra or Bead or Life
+            // If using Media, Mediarama, Mediarahan/Bead Chain, Great Chakra or Bead of Life
             if (nskill == 39 || nskill == 40 || nskill == 41 || nskill == 84 || nskill == 92)
             {
-                // If skill/item already used on target, skip datExectSkill
-                if (demonsAlreadyHealed.Contains(d.id)) return false;
+                // If skill/item already used on target (or target dead), skip datExectSkill
+                if (demonsAlreadyHealed.Contains(d.id) || d.hp == 0) return false;
 
                 // Else add it to the list and apply the skill/item
                 else demonsAlreadyHealed.Add(d.id);
